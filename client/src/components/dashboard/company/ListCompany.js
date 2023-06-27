@@ -13,6 +13,7 @@ const ListCompany = ({  allCompanys, setCompanyChange }) => {
         headers: { token: localStorage.token }
       });
 
+
       setCompany(company.filter(element => element.company_id !== id));
     } catch (err) {
       console.error(err.message);
@@ -30,6 +31,8 @@ const ListCompany = ({  allCompanys, setCompanyChange }) => {
         <thead>
           <tr>
             <th>Name</th>
+            <th>Company NIP</th>
+            <th>Company KRS</th>
             <th>Edit</th>
             <th>Delete</th>
           </tr>
@@ -42,10 +45,11 @@ const ListCompany = ({  allCompanys, setCompanyChange }) => {
           </tr> */}
 
           {company.length !== 0 &&
-            company[0].company_id !== null &&
-            company.map(element => (
+            company[0].company_id !== null && company.map(element => (
               <tr key={element.company_id}>
                 <td>{element.company_name}</td>
+                <td>{element.company_nip}</td>
+                <td>{element.company_krs}</td>
                 <td>
                   <EditCompany company={element} setCompanyChange={setCompanyChange} />
                 </td>

@@ -28,5 +28,6 @@ CREATE TABLE companytable(
 insert into users (user_name, user_email, user_password) values ('jolanta', 'jolanta@gmail.com', 'jolanta');
 insert into companytable (user_id, company_name, company_nip, company_krs) values ('1fd37309-282f-4c82-9198-b0c616e182e4', 'Nestle Polska S.A.', 5270203968, 0000025166);
 insert into companytable (user_id, company_name, company_nip, company_krs) values ('8f1479ed-d81b-4c1c-86ab-3086466d754b', 'Nestle Polska S.A.', 5270203968, 0000025166);
-insert into companytable (user_id, company_name, company_nip, company_krs) values ('8f1479ed-d81b-4c1c-86ab-3086466d754b', 'EEEE S.A.', 0000000001, 0000025102);
+insert into companytable (user_id, company_name, company_nip, company_krs) values ('8f1479ed-d81b-4c1c-86ab-3086466d754b', 'Zywiec', 5530007219, 0000018602);
 SELECT u.user_name, c.company_name FROM users AS u LEFT JOIN companys AS c ON u.user_id = c.user_id WHERE u.user_id = '8f1479ed-d81b-4c1c-86ab-3086466d754b';
+DELETE FROM companytable WHERE company_id = 3 AND user_id = '8f1479ed-d81b-4c1c-86ab-3086466d754b';

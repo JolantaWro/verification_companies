@@ -14,6 +14,7 @@ const InputCompany = ({ setCompanyChange }) => {
       myHeaders.append("token", localStorage.token);
 
       const body = { name, nip, krs };
+      console.log(body)
       const response = await fetch("http://localhost:5000/dashboard/company", {
         method: "POST",
         headers: myHeaders,
@@ -23,7 +24,7 @@ const InputCompany = ({ setCompanyChange }) => {
       const parseResponse = await response.json();
 
       setCompanyChange(true);
-    //   setName("");
+      setName("");
 
 
       // window.location = "/";

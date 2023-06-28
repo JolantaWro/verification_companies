@@ -5,10 +5,12 @@ const EditCompany = ({ company, setCompanyChange }) => {
     const [name, setName] = useState(company.company_name);
     const [nip, setNip] = useState(company.company_nip);
     const [krs, setKrs] = useState(company.company_krs);
+    const [data, setData] = useState(company.date_verification);
+    const [mark, setMark] = useState(company.type_company);
 
   const editText = async id => {
     try {
-      const body = { name, nip, krs };
+      const body = { name, nip, krs, data, mark };
 
       const myHeaders = new Headers();
 
@@ -66,6 +68,14 @@ const EditCompany = ({ company, setCompanyChange }) => {
               <div className="edit-company">
                 <label htmlFor="numberKRS" className="form-label">Number KRS:</label>
                 <input type="number" className="form-control" value={krs} onChange={e => setKrs(e.target.value)} id="numberKRS"/>
+              </div>
+              <div className="edit-company">
+                <label htmlFor="data-ver" className="form-label">Date verification:</label>
+                <input type="date" className="form-control" value={data} onChange={e => setData(e.target.value)} id="data-ver"/>
+              </div>
+              <div className="edit-company">
+                <label htmlFor="mark" className="form-label">Type of register:</label>
+                <input type="text" className="form-control" value={mark} onChange={e => setMark(e.target.value)} id="mark"/>
               </div>
             </div>
 

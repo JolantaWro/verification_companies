@@ -10,7 +10,7 @@ router.get("/", authorization, async (req, res) => {
 
     //req.user has the payload
     const user = await pool.query(
-      "SELECT u.user_name, c.company_name, c.company_id,c.company_nip, c.company_krs  FROM users AS u LEFT JOIN companytable AS c ON u.user_id = c.user_id WHERE u.user_id = $1",
+      "SELECT u.user_name, c.company_name, c.company_id,c.company_nip, c.company_krs, date_verification, type_company  FROM users AS u LEFT JOIN companytableapi AS c ON u.user_id = c.user_id WHERE u.user_id = $1",
       [req.user.id]
     );
 
@@ -27,10 +27,10 @@ router.get("/", authorization, async (req, res) => {
 router.post("/company", authorization, async (req, res) => {
   try {
     console.log(req.body);
-    const { name, nip, krs } = req.body;
+    const { name, nip, krs, date, mark } = req.body;
     const newCompany = await pool.query(
-      "INSERT INTO companytable (user_id, company_name, company_nip, company_krs) VALUES ($1, $2, $3, $4) RETURNING *",
-      [req.user.id, name, nip, krs]
+      "INSERT INTO companytableapi (user_id, company_name, company_nip, company_krs, date_verification, type_company) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
+      [req.user.id, name, nip, krs, date, mark]
     );
 
     res.json(newCompany.rows[0]);
@@ -44,10 +44,10 @@ router.post("/company", authorization, async (req, res) => {
 router.put("/company/:id", authorization, async (req, res) => {
   try {
     const { id } = req.params;
-    const { name, nip, krs } = req.body;
+    const { name, nip, krs, date, mark } = req.body;
     const updateCompany = await pool.query(
-      "UPDATE companytable SET company_name = $1, company_nip = $2, company_krs = $3  WHERE company_id = $4 AND user_id = $5 RETURNING *",
-      [name, nip, krs, id, req.user.id]
+      "UPDATE companytableapi SET company_name = $1, company_nip = $2, company_krs = $3, date_verification = $4, type_company = $5 WHERE company_id = $6 AND user_id = $7 RETURNING *",
+      [name, nip, krs, date, mark, id, req.user.id]
     );
 
     if (updateCompany.rows.length === 0) {
@@ -64,7 +64,7 @@ router.delete("/company/:id", authorization, async (req, res) => {
   try {
     const { id } = req.params;
     const deleteCompany = await pool.query(
-      "DELETE FROM companytable WHERE company_id = $1 AND user_id = $2 RETURNING *",
+      "DELETE FROM companytableapi WHERE company_id = $1 AND user_id = $2 RETURNING *",
       [id, req.user.id]
     );
 

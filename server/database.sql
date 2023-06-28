@@ -23,6 +23,18 @@ CREATE TABLE companytable(
   FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
+CREATE TABLE companytableapi(
+  company_id SERIAL,
+  user_id UUID,
+  company_name VARCHAR(255) NOT NULL,
+  company_nip bigint NOT NULL,
+  company_krs bigint NOT NULL,
+  date_verification DATE,
+  type_company VARCHAR(1) NOT NULL,
+  PRIMARY KEY (company_id),
+  FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
 --false user
 8f1479ed-d81b-4c1c-86ab-3086466d754b
 insert into users (user_name, user_email, user_password) values ('jolanta', 'jolanta@gmail.com', 'jolanta');

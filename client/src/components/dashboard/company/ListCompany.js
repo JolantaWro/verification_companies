@@ -34,24 +34,21 @@ const ListCompany = ({  allCompanys, setCompanyChange }) => {
             <th>Name</th>
             <th>Company NIP</th>
             <th>Company KRS</th>
+            <th>Date verification</th>
             <th>Edit</th>
             <th>Delete</th>
             <th>Check in KRS</th>
           </tr>
         </thead>
         <tbody>
-          {/*<tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-          </tr> */}
-
+   
           {company.length !== 0 &&
             company[0].company_id !== null && company.map(element => (
               <tr key={element.company_id}>
                 <td>{element.company_name}</td>
                 <td>{element.company_nip}</td>
                 <td>{element.company_krs}</td>
+                <td>{element.date_verification}</td>
                 <td>
                   <EditCompany company={element} setCompanyChange={setCompanyChange} />
                 </td>

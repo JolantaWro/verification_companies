@@ -2,8 +2,12 @@ import React, { useState } from "react";
 
 const InputCompany = ({ setCompanyChange }) => {
   const [name, setName] = useState("");
-  const [nip, setNip] = useState(""); //change to int
-  const [krs, setKrs] = useState(""); //change to int
+  const [nip, setNip] = useState(""); 
+  const [krs, setKrs] = useState(""); 
+  const [data, setData] = useState(""); 
+  const [mark, setMark] = useState("P"); 
+
+
 
   const onSubmitForm = async e => {
     e.preventDefault();
@@ -13,7 +17,7 @@ const InputCompany = ({ setCompanyChange }) => {
       myHeaders.append("Content-Type", "application/json");
       myHeaders.append("token", localStorage.token);
 
-      const body = { name, nip, krs };
+      const body = { name, nip, krs, data, mark };
       console.log(body)
       const response = await fetch("http://localhost:5000/dashboard/company", {
         method: "POST",
@@ -25,6 +29,10 @@ const InputCompany = ({ setCompanyChange }) => {
 
       setCompanyChange(true);
       setName("");
+      setNip("");
+      setKrs("");
+      setData("");
+    
 
 
       // window.location = "/";
@@ -42,7 +50,7 @@ const InputCompany = ({ setCompanyChange }) => {
             placeholder="Company name"
             className="form-control"
             value={name}
-            nChange={e => setName(e.target.value)}
+            onChange={e => setName(e.target.value)}
           />
           <input
             type="number"
@@ -57,6 +65,20 @@ const InputCompany = ({ setCompanyChange }) => {
             className="form-control"
             value={krs}
             onChange={e => setKrs(e.target.value)}
+          />
+          <input
+            type="date"
+            placeholder="Date publication data"
+            className="form-control"
+            value={data}
+            onChange={e => setData(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Type of register"
+            className="form-control"
+            value={mark}
+            onChange={e => setMark(e.target.value)}
           />
           <button className="btn btn-success ">Add</button>
         </form>

@@ -34,31 +34,33 @@ const InputCompany = ({ setCompanyChange }) => {
   };
   return (
     <>
-      <h1 className="text-center my-5">Input Company</h1>
-      <form className="d-flex" onSubmit={onSubmitForm}>
-        <input
-          type="text"
-          placeholder="add name company"
-          className="form-control"
-          value={name}
-          onChange={e => setName(e.target.value)}
-        />
-        <input
-          type="number"
-          placeholder="add nip company"
-          className="form-control"
-          value={nip}
-          onChange={e => setNip(e.target.value)}
-        />
-        <input
-          type="number"
-          placeholder="add krs company"
-          className="form-control"
-          value={krs}
-          onChange={e => setKrs(e.target.value)}
-        />
-        <button className="btn btn-success ">Add</button>
-      </form>
+      <h1 className="text-center my-5">Add Company</h1>
+      <div className="add-company">
+        <form className="d-flex" onSubmit={onSubmitForm}>
+          <input
+            type="text"
+            placeholder="Company name"
+            className="form-control"
+            value={name}
+            nChange={e => setName(e.target.value)}
+          />
+          <input
+            type="number"
+            placeholder="Company NIP"
+            className="form-control"
+            value={nip}
+            onChange={e => setNip(e.target.value)}
+          />
+          <input
+            type="number"
+            placeholder="Company KRS"
+            className="form-control"
+            value={krs}
+            onChange={e => setKrs(e.target.value)}
+          />
+          <button className="btn btn-success ">Add</button>
+        </form>
+      </div>
     </>
   );
 };

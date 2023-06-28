@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.modal-body  label {
+  font-weight: bold;
+}
+
+.edit-company {
+  margin-bottom: 20px;
+}
+
+.add-company input {
+  /* margin: 5px; */
+}

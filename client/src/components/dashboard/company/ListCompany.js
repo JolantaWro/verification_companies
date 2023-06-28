@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import EditCompany from "./EditCompany";
+import CheckCompany from "./CheckCompany"
 
 const ListCompany = ({  allCompanys, setCompanyChange }) => {
   const [company, setCompany] = useState([]); //empty array
@@ -35,6 +36,7 @@ const ListCompany = ({  allCompanys, setCompanyChange }) => {
             <th>Company KRS</th>
             <th>Edit</th>
             <th>Delete</th>
+            <th>Check in KRS</th>
           </tr>
         </thead>
         <tbody>
@@ -54,12 +56,10 @@ const ListCompany = ({  allCompanys, setCompanyChange }) => {
                   <EditCompany company={element} setCompanyChange={setCompanyChange} />
                 </td>
                 <td>
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => deleteCompany(element.company_id)}
-                  >
-                    Delete
-                  </button>
+                  <button className="btn btn-danger" onClick={() => deleteCompany(element.company_id)}>Delete</button>
+                </td>
+                <td>
+                  <CheckCompany company={element} />
                 </td>
               </tr>
             ))}

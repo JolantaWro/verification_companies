@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { getCompanyData } from "../../../api/regist"
+import DetailCompany from "./DetailCompany";
 
 
 const CheckCompany = ({ company }) => {
     const [krs, setKrs] = useState(company.company_krs);
     const [mark, setMark] = useState(company.type_company);
+    const [element, setElement] = useState({})
+    const [elementCompany, setElementCompany] = useState("")
+
 
 
 
@@ -21,27 +25,40 @@ const CheckCompany = ({ company }) => {
     //     }
     // }
 
-    const companyVer = (e) => {
-        console.log(e)
-    }
 
 
-    // const getCompany = async company => {
-    //     console.log(company)
-    //     try {
-    //         console.log(company)
-    //         const data = await fetch(`https://api-krs.ms.gov.pl/api/krs/OdpisAktualny/${company.company_krs}?rejestr=${company.type_company}&format=json`)
+
+    const getCompany = async (krs, mark) => {
+        try {
+            const data = await fetch(`https://api-krs.ms.gov.pl/api/krs/OdpisAktualny/${krs}?rejestr=${mark}&format=json`)
             
 
-    //         const parseData = await data.json();
-    //         console.log(parseData)
+            const parseData = await data.json();
+            console.log(parseData.odpis.naglowekA.dataOstatniegoWpisu)
+            setElement(parseData)
+            console.log(element)
+            setElementCompany(parseData)
+
+            // name: company.odpis.dane.dzial1.danePodmiotu.nazwa,
+            // date: company.odpis.naglowekA.dataOstatniegoWpisu,
+            // capital: company.odpis.dane.dzial1.kapital.wysokoscKapitaluZakladowego.wartosc,
+            // codePKD: company.odpis.dane.dzial3.przedmiotDzialalnosci.przedmiotPrzewazajacejDzialalnosci,
+            // results: company.odpis.dane.dzial3.wzmiankiOZlozonychDokumentach.wzmiankaOZlozeniuRocznegoSprawozdaniaFinansowego
 
 
-    //     } catch (err) {
-    //         console.error(err.message);
-    //     }
+        } catch (err) {
+            console.error(err.message);
+        }
 
-    // }
+    }
+
+    const companyVer = () => {
+        setMark(company.type_company)
+        setKrs(company.company_krs)
+        console.log(mark)
+        console.log(krs)
+        getCompany(krs, mark)
+    }
 
 
     // function getCompanyData(value) {
@@ -55,8 +72,8 @@ const CheckCompany = ({ company }) => {
     return (
         <>
             {/* <h2>Check company</h2> */}
-            <button type="button" class="btn btn-secondary" value={company.company_krs} onClick={companyVer}>Check</button>
-            {/* <button type="button" class="btn btn-secondary" data-target={`#id${company.company_id}`} onClick={companyVer}>Check</button> */}
+            {/* <button type="button" class="btn btn-secondary" value={company.company_krs} onClick={companyVer}>Check</button> */}
+            <button type="button" class="btn btn-secondary" value={company} onClick={companyVer}>Check</button>
         </>
     )
 }

@@ -1,13 +1,23 @@
 import React, { useState } from "react";
 import { getCompanyData } from "../../../api/regist"
 import DetailCompany from "./DetailCompany";
+import { Link } from "react-router-dom";
+import { Modal, Button } from 'react-bootstrap'
 
 
 const CheckCompany = ({ company }) => {
+    const [name, setName] = useState(company.company_krs);
     const [krs, setKrs] = useState(company.company_krs);
     const [mark, setMark] = useState(company.type_company);
     const [element, setElement] = useState({})
     const [elementCompany, setElementCompany] = useState("")
+
+
+    const handleClick = () => {
+        
+    }
+
+
 
 
 
@@ -73,7 +83,11 @@ const CheckCompany = ({ company }) => {
         <>
             {/* <h2>Check company</h2> */}
             {/* <button type="button" class="btn btn-secondary" value={company.company_krs} onClick={companyVer}>Check</button> */}
-            <button type="button" class="btn btn-secondary" value={company} onClick={companyVer}>Check</button>
+            {/* <button type="button" class="btn btn-secondary" value={company} onClick={companyVer}>Check</button> */}
+
+            <button type="button"  class="btn btn-secondary" >
+            Check
+            </button>
         </>
     )
 }

@@ -24,6 +24,31 @@ router.get("/", authorization, async (req, res) => {
   }
 });
 
+
+router.get("/company/:id", authorization, async (req, res) => {
+  try {
+
+    const {id} = req.params;
+
+    const detailCompany = await pool.query(
+      "SELECT FROM companytableapi WHERE company_id = $1 AND user_id = $2",
+      [id, req.user.id]
+    );
+
+    if (detailCompany.rows.length === 0) {
+      return res.json("problem");
+    }
+
+    // console.log(user.rows)
+
+    res.json("This is you company");
+
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
+
 router.post("/company", authorization, async (req, res) => {
   try {
     console.log(req.body);

@@ -8,28 +8,30 @@ const EditCompany = ({ company, setCompanyChange }) => {
     const [data, setData] = useState(company.date_verification);
     const [mark, setMark] = useState(company.type_company);
 
-  const editText = async id => {
-    try {
-      const body = { name, nip, krs, data, mark };
 
-      const myHeaders = new Headers();
 
-      myHeaders.append("Content-Type", "application/json");
-      myHeaders.append("token", localStorage.token);
+    const editText = async id => {
+      try {
+        const body = { name, nip, krs, data, mark };
 
-      await fetch(`http://localhost:5000/dashboard/company/${id}`, {
-        method: "PUT",
-        headers: myHeaders,
-        body: JSON.stringify(body)
-      });
+        const myHeaders = new Headers();
 
-      setCompanyChange(true);
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("token", localStorage.token);
 
-      // window.location = "/";
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
+        await fetch(`http://localhost:5000/dashboard/company/${id}`, {
+          method: "PUT",
+          headers: myHeaders,
+          body: JSON.stringify(body)
+        });
+
+        setCompanyChange(true);
+
+        // window.location = "/";
+      } catch (err) {
+        console.error(err.message);
+      }
+    };
 
 
 

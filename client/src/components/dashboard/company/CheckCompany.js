@@ -13,6 +13,33 @@ const CheckCompany = ({ company }) => {
     const [elementCompany, setElementCompany] = useState("")
 
 
+    const getCompanyDetail = async (id) => {
+
+        try {
+            console.log("tu")
+
+            const myHeaders = new Headers();
+
+            myHeaders.append("Content-Type", "application/json");
+            myHeaders.append("token", localStorage.token);
+
+            const res = await fetch(`http://localhost:5000/dashboard/company/${id}`, {
+                method: "GET",
+                headers: myHeaders,
+            });
+        
+            const parseData = await res.json();
+            console.log(parseData)
+        
+            // setAllCompanys(parseData);
+        
+        } catch (err) {
+          console.error(err.message);
+        }
+      };
+    
+
+
     const handleClick = () => {
         
     }
@@ -85,9 +112,10 @@ const CheckCompany = ({ company }) => {
             {/* <button type="button" class="btn btn-secondary" value={company.company_krs} onClick={companyVer}>Check</button> */}
             {/* <button type="button" class="btn btn-secondary" value={company} onClick={companyVer}>Check</button> */}
 
-            <button type="button"  class="btn btn-secondary" >
+            <button type="button"  class="btn btn-secondary" onClick={getCompanyDetail}>
             Check
             </button>
+        
         </>
     )
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import EditCompany from "./EditCompany";
 import CheckCompany from "./CheckCompany"
+import {Link} from "react-router-dom";
 
 const ListCompany = ({  allCompanys, setCompanyChange }) => {
   const [company, setCompany] = useState([]); //empty array
@@ -56,6 +57,7 @@ const ListCompany = ({  allCompanys, setCompanyChange }) => {
                   <button className="btn btn-danger" onClick={() => deleteCompany(element.company_id)}>Delete</button>
                 </td>
                 <td>
+                  {/* <Link to={`http://localhost:5000/dashboard/company/${element.company_id}`} key={element.company_id} company={element}>Check</Link> */}
                   <CheckCompany company={element} />
                 </td>
               </tr>

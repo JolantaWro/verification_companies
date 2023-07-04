@@ -17,7 +17,7 @@ const Dashboard = ({ setAuth }) => {
       });
 
       const parseData = await res.json();
-      console.log(parseData)
+      // console.log(parseData)
 
       setAllCompanys(parseData);
 

@@ -10,7 +10,7 @@ router.get("/", authorization, async (req, res) => {
 
     //req.user has the payload
     const user = await pool.query(
-      "SELECT u.user_name, c.company_name, c.company_id,c.company_nip, c.company_krs, date_verification, type_company  FROM users AS u LEFT JOIN companytableapi AS c ON u.user_id = c.user_id WHERE u.user_id = $1",
+      "SELECT u.user_name, c.company_name, c.company_id,c.company_nip, c.company_krs, date_verification, type_company FROM users AS u LEFT JOIN companytableapi AS c ON u.user_id = c.user_id WHERE u.user_id = $1",
       [req.user.id]
     );
 
@@ -25,13 +25,13 @@ router.get("/", authorization, async (req, res) => {
 });
 
 
-router.get("/company/:id", authorization, async (req, res) => {
+router.get("/company/detail/:id", authorization, async (req, res) => {
   try {
 
     const {id} = req.params;
 
     const detailCompany = await pool.query(
-      "SELECT FROM companytableapi WHERE company_id = $1 AND user_id = $2",
+      "SELECT c.company_name, c.company_nip, c.company_krs, date_verification, type_company FROM companytableapi AS c WHERE company_id = $1 AND user_id = $2",
       [id, req.user.id]
     );
 
@@ -41,7 +41,7 @@ router.get("/company/:id", authorization, async (req, res) => {
 
     // console.log(user.rows)
 
-    res.json("This is you company");
+    res.json(detailCompany.rows);
 
   } catch (err) {
     console.error(err.message);

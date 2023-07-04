@@ -10,6 +10,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Dashboard from "./components/dashboard/Dashboard";
 import Landing from "./components/Landing";
+import DetailCompany from "./components/dashboard/company/DetailCompany";
 
 
 
@@ -51,6 +52,7 @@ function App() {
             <Route exact path="/login" element={!isAuthenticated ? <Login setAuth={setAuth}/> : <Navigate to="/dashboard" />} />
             <Route exact path="/register" element={!isAuthenticated ? <Register setAuth={setAuth}/>: <Navigate to="/login"/>} />
             <Route exact path="/dashboard" element={isAuthenticated ? <Dashboard setAuth={setAuth} /> : <Navigate to="/login"/>} />
+            <Route path="/details" element={isAuthenticated ? <DetailCompany setAuth={setAuth} /> : <Navigate to="/login"/>} />
           </Routes>
         </div>
       </Router>

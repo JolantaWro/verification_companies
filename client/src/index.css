@@ -20,6 +20,30 @@ code {
   margin-bottom: 20px;
 }
 
-.add-company input {
-  /* margin: 5px; */
+.detail-container {
+  height: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke
+
+}
+
+.detail-header {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.detail-header span {
+  font-weight: bold;
+  color: burlywood;
+}
+
+.detail-page {
+  text-align: center;
+  width: 800px;
+  background-color: white;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
 }

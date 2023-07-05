@@ -1,15 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getCompanyData } from "../../../api/regist"
 import DetailCompany from "./DetailCompany";
-import { Link, redirect } from "react-router-dom";
+import { Link, NavLink, redirect } from "react-router-dom";
 import { Modal, Button } from 'react-bootstrap'
 
 
 const CheckCompany = ({ company }) => {
-    // const [name, setName] = useState(company.company_krs);
+    const [companyKRS, setCompanyKRS] = useState("");
+    const [companyChangee, setChangeeSet] = useState(false);
     // const [krs, setKrs] = useState(company.company_krs);
     // const [mark, setMark] = useState(company.type_company);
     // const [element, setElement] = useState("")
+
+
+    async function companyVerificationKRS (krs, mark){
+        try {
+            const data = await getCompanyData(krs, mark)
+            const companyInfoKRS = await data.json()
+
+            setCompanyKRS(companyInfoKRS)
+            console.log(companyInfoKRS)
+            
+            
+            
+            
+            
+        } catch (err) {
+            console.error(err.message);
+        }
+    }
 
 
       const getCompanyDetail = async id => {
@@ -19,41 +38,21 @@ const CheckCompany = ({ company }) => {
                 method: "GET",
                 headers: { token: localStorage.token }
             });
-        
             const parseData = await res.json();
-            // setElement(parseData)
-            // console.log(element)
-            console.log(parseData)
+
+            companyVerificationKRS(parseData[0].company_krs, parseData[0].type_company)
+
         
         } catch (err) {
           console.error(err.message);
         }
       };
+
+      useEffect(() => {
+        setChangeeSet(true)
+      }, [companyChangee]);
+
     
-
-
-    // const handleClick = () => {
-    //     console.log(element[0].company_name)
-    //     console.log(element[0].company_krs)
-    // }
-
-
-
-
-
-
-    // async function companyVer (krs, mark){
-    //     try {
-    //         const data = await getCompanyData(krs, mark)
-    //         const companyR = await data.json()
-
-    //         console.log(companyR)
-            
-            
-    //     } catch (err) {
-    //         console.error(err.message);
-    //     }
-    // }
 
 
 
@@ -91,21 +90,26 @@ const CheckCompany = ({ company }) => {
     // }
 
 
+    
+
+
+
 
     return (
+            
         <>
-            {/* <button type="button"  class="btn btn-secondary" onClick={()=>getCompanyDetail(company.company_id)}>
-            Check
-            </button> */}
-            {/* <button onClick={handleClick}>Print</button> */}
-            {/* <Link to={`http://localhost:5000/dashboard/company/${company.company_id}`}>
-                <button type="button"  class="btn btn-secondary" onClick={getCompanyDetail} value={company.company_id}> 
-                Check</button></Link> */}
-            <Link to="/details">
+{/* 
+            <Link to="/details" >
                 <button type="button"  class="btn btn-secondary" onClick={()=>getCompanyDetail(company.company_id)}>
                 Check
             </button>
-            </Link>
+            </Link> */}
+            <button type="button"  class="btn btn-secondary" onClick={()=>getCompanyDetail(company.company_id)}>
+                Check
+            </button>
+
+            
+        
 
         </>
     )

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-const DetailCompany = () => {
+const DetailCompany = ({companyKRS}) => {
+
+    console.log(companyKRS)
 
     
     return (
@@ -8,7 +10,7 @@ const DetailCompany = () => {
             <div className="detail-container">
                 <div className="detail-page">
                     <div className="detail-header">
-                        <h3>Detail about <span>"CompanyName............."</span></h3>
+                        <h3>Detail about <span>".............."</span></h3>
                     </div>
                     <div className="detail-info-company">
                         <table className="table mt-5">
@@ -34,7 +36,7 @@ const DetailCompany = () => {
                     <div className="detail-info-krs">
                         <ul>
                             <li>
-                                date
+                                date 
                             </li>
                         </ul>
                     </div>

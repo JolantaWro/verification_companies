@@ -7,7 +7,8 @@ import { Modal, Button } from 'react-bootstrap'
 
 const CheckCompany = ({ company }) => {
     const [companyKRS, setCompanyKRS] = useState("");
-    const [companyChangee, setChangeeSet] = useState(false);
+    const [infoCompanyOpen, setInfoCompanyOpen] = useState(false);
+    // const [companyChangee, setChangeeSet] = useState(false);
     // const [krs, setKrs] = useState(company.company_krs);
     // const [mark, setMark] = useState(company.type_company);
     // const [element, setElement] = useState("")
@@ -19,12 +20,7 @@ const CheckCompany = ({ company }) => {
             const companyInfoKRS = await data.json()
 
             setCompanyKRS(companyInfoKRS)
-            console.log(companyInfoKRS)
-            
-            
-            
-            
-            
+
         } catch (err) {
             console.error(err.message);
         }
@@ -48,9 +44,9 @@ const CheckCompany = ({ company }) => {
         }
       };
 
-      useEffect(() => {
-        setChangeeSet(true)
-      }, [companyChangee]);
+    //   useEffect(() => {
+    //     setChangeeSet(true)
+    //   }, [companyChangee]);
 
     
 
@@ -89,28 +85,20 @@ const CheckCompany = ({ company }) => {
     //     getCompany(krs, mark)
     // }
 
-
-    
-
-
-
+    console.log(companyKRS)
 
     return (
-            
         <>
-{/* 
-            <Link to="/details" >
+
+            {/* <Link to="/details" >
                 <button type="button"  class="btn btn-secondary" onClick={()=>getCompanyDetail(company.company_id)}>
                 Check
             </button>
             </Link> */}
-            <button type="button"  class="btn btn-secondary" onClick={()=>getCompanyDetail(company.company_id)}>
+            {/* <button type="button" className="btn btn-secondary" data-toggle="modal" data-target={`#id${company.company_id}`}  onClick={()=>getCompanyDetail(company.company_id)}>
                 Check
-            </button>
-
-            
-        
-
+            </button> */}
+            {/* {infoCompanyOpen && <DetailCompany setInfoCompanyOpen={setInfoCompanyOpen} />} */}
         </>
     )
 }

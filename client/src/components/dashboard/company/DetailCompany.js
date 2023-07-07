@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const DetailCompany = ({companyKRS}) => {
-
-    console.log(companyKRS)
+const DetailCompany = ({setInfoCompanyOpen}) => {
 
     
     return (
@@ -42,7 +40,9 @@ const DetailCompany = ({companyKRS}) => {
                     </div>
                 </div>
             </div>
-            
+            <div>
+                <button onClick={()=>setInfoCompanyOpen(false)}>Close</button>
+            </div>
         </>
     )
 }

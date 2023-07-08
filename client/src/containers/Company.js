@@ -1,0 +1,39 @@
+import React from "react";
+
+
+import {connect} from "react-redux";
+import {fetchAsyncData} from "../redux/actions";
+
+
+
+const CompanyContainer = ({companyAsync, company, loading, error  }) => {
+    const handleSubmit = (value) => {
+        companyAsync(value)
+    }
+
+    return (
+        <>
+            <CompanyInput onSubmit={handleSubmit} />
+            {loading && "Pobieram..."}
+            {error && <h3 className="company">{error}</h3>}
+            {company ? <Company company={company}/> : null}
+        </>
+    );
+};
+
+
+const mapStateToProps = state => ({
+    loading: state.company.loading,
+    error: state.company.error,
+    company: state.company.company
+    
+});
+
+const mapDispatchToProps = dispatch => ({
+    companyAsync: (value) => dispatch(fetchAsyncData(value))
+    
+});
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(CompanyContainer);

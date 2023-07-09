@@ -11,7 +11,7 @@ import Register from "./components/Register";
 import Dashboard from "./components/dashboard/Dashboard";
 import Landing from "./components/Landing";
 import DetailCompany from "./components/dashboard/company/DetailCompany";
-import KrsView from "./components/simpleKRS/krsView";
+import Company from "./containers/Company"
 
 
 
@@ -54,7 +54,7 @@ function App() {
             <Route exact path="/register" element={!isAuthenticated ? <Register setAuth={setAuth}/>: <Navigate to="/login"/>} />
             <Route exact path="/dashboard" element={isAuthenticated ? <Dashboard setAuth={setAuth} /> : <Navigate to="/login"/>} />
             <Route path="/details" element={isAuthenticated ? <DetailCompany setAuth={setAuth} /> : <Navigate to="/login"/>} />
-            <Route path="/check" element={<KrsView />} />
+            <Route path="/check" element={<Company />} />
           </Routes>
         </div>
       </Router>

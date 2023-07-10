@@ -109,48 +109,97 @@ p {
 
 /* company KRS */
 
-.companyKRS {
+/* .companyInputKRS {
   margin: 0;
   padding: 0;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 /* company Input */
 
-
-#root .container-input {
-  background-image: url("assets/img/companyInput.jpg");
+.companyKRSContainer {
+  margin: 0;
+  padding: 0;
+  /* background-color: whitesmoke; */
 }
 
+.companyKRSAbout {
+  display: flex;
+  background-color: white;
+  margin: 30px 0 0px 0;
+}
+.companyKRSAbout a {
+  margin: 0 auto;
+}
 
-.container-input {
+.companyKRSInput {
+  background-color: white
+}
+
+.companyKRSInput span {
+  color: #ff3e4e;
+  font-weight: bold;
+
+}
+
+.companyKRSInput h3 {
+  text-align: center;
+  font-size: 3.5em;
+}
+
+.companyKRSInputHeader {
+  height: 620px;
+  background-image: url("assets/img/company_input_logo.jpg");
+  background-repeat: no-repeat; 
+  background-size: cover;
+}
+
+/* .companyKRSInput {
+  text-align: center;
+  height: 500px;
+  border-radius: 30px;
+  background-image: url("assets/img/hands.jpg");
+} */
+
+/* .companyKRSInputUser {
+  margin-top: 30px;
+  border-radius: 30px;
+  opacity: 0.7;
+  width: 500px;
+  height: 300px;
+  background-color: white;
+  box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+
+} */
+
+/* #root .container-input {
+  background-image: url("assets/img/companyInput.jpg");
+  border-radius: 30px;
+} */
+
+
+/* .container-input {
+
   height: 400px;
-
   display: flex;
   justify-content: center;
   font-size: 1.1em;
   font-weight: bold;
-  /* margin-top: 50px; */
-  /* margin: 0 50px 0 20px; */
-  /* height: 400px; */
-  /* background-image: url("assets/img/companyInput.jpg"); */
- 
-}
 
-
-/* .container-input form {
-  background-color: #fcfcfc;
 } */
 
+
+/* 
+
 form.container-input-form {
+  margin-top: 30px;
   border-radius: 30px;
-  margin-top: 110px;
   opacity: 0.7;
   width: 500px;
-  height: 400px;
+  height: 300px;
   background-color: white;
   box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
 }
@@ -188,7 +237,7 @@ div.searchKRS {
   display: flex;
   justify-content: center;
   margin-top: 20px;
-}
+} */
 
 
 

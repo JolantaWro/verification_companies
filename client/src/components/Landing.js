@@ -10,12 +10,12 @@ const Landing = () => {
         <div className="jumbotron mt-5">
 
           <div className="landing-menu">
-            <h1>Welcome</h1>
-              <p>Sign In and start building your list</p>
-              <Link to="/login" className="btn btn-primary">Login</Link>
-              <Link to="/register" className="btn btn-primary ml-3">Register</Link>
-              <p>or check Company in KRS</p>
-              <Link to="/check" className="btn btn-primary">Check</Link>
+            <h1>Witaj !</h1>
+              <p>Zaloguj się i zacznij budować swoją listę,</p>
+              <Link to="/login" className="btn btn-primary">Logowanie</Link>
+              <Link to="/register" className="btn btn-primary ml-3">Rejestracja</Link>
+              <p>bądź sprawdź w KRS</p>
+              <Link to="/check" className="btn btn-primary">Szukaj</Link>
           </div>
 
           <div className="landing-photo">

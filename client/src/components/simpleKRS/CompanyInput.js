@@ -32,15 +32,15 @@ const CompanyInput = ({ onSubmit }) => {
 
     return (
         <>
-            <div className="container-input">
-                <form className="container-input-form" onSubmit={handleSubmit}>
+            <div className="companyKRSInputUser">
+                <form onSubmit={handleSubmit}>
                     <div className="numberKRS">
-                        <label htmlFor="numberKRS" className="form-label">Number KRS </label>
+                        <label htmlFor="numberKRS" className="form-label">Nr KRS </label>
                         <input type="number" placeholder="00000123.." className="form-control" id="numberKRS"
                             onChange={handleChangeInput}/>
                     </div>
                     <div className="registerKRS">
-                        <label htmlFor="register" className="form-label">Registry type</label>
+                        <label htmlFor="register" className="form-label">Typ rejestru</label>
                         <select id="register" className="form-select" onChange={handleChangeSelect}>
                             <option value="P">Przedsiębiorcy</option>
                             <option value="S">Stowarzyszenia i inne</option>

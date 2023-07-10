@@ -1,6 +1,6 @@
 import React from "react";
 
-const Company = ( { company }) => {
+const Company = ({ company }) => {
 
     return(
         <>

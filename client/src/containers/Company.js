@@ -11,6 +11,7 @@ import Company from "../components/simpleKRS/Company";
 import {connect} from "react-redux";
 import {fetchAsyncData} from "../redux/actions";
 import { compose } from "redux";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 
 
@@ -24,6 +25,10 @@ const CompanyContainer = ({companyAsync, company, loading, error  }) => {
         <>
             <div className="companyKRSContainer">
                 <div className="companyKRSAbout">
+
+                    <Link to="/">
+                        <i class="bi bi-arrow-left-circle-fill"></i>
+                        Powrót</Link>
                     <a href="https://ekrs.ms.gov.pl/web/wyszukiwarka-krs/strona-glowna/index.html">
                         <img src={krs} alt="LogoKRS" width="200" height="50" className="d-inline-block align-text-top"/>
                     </a>
@@ -44,28 +49,32 @@ const CompanyContainer = ({companyAsync, company, loading, error  }) => {
                         <img src={big} alt="LogoBIG" width="170" height="50"
                              className="d-inline-block align-text-top"/>
                     </a>
-                    <Link to="/">Powrót</Link>
+                    
                 </div>
 
                 <div className="companyKRSInput">
-                    <div className="companyKRSInputHeader">
-                        
-                        {/* <img src={companyInput} alt="CompanyInput"/> */}
-                    </div>
-                    <div>
+                    <div className="companyKRSInputUser">
                         <h3>Szukaj <span>w KRS</span></h3>
                         <CompanyInput onSubmit={handleSubmit} />
                     </div>
+
+                    <div className="companyKRSLanding">
+                        {/* do zmiany */}
+                        {loading && "Pobieram..."}
+                        {error && <h3 className="company">{error}</h3>}
+                    </div>
+                    <div className="companyKRSResult">
+                        {company ? <Company company={company}/> : null}
+                    </div>
+
+
+
+                    <div className="companyKRSInputHeader">
+                    </div>
+                    
                 </div>
                 
-                <div className="companyKRSLanding">
-                    {/* do zmiany */}
-                    {loading && "Pobieram..."}
-                    {error && <h3 className="company">{error}</h3>}
-                </div>
-                <div className="companyKRSResult">
-                    {company ? <Company company={company}/> : null}
-                </div>
+                
             </div>
         </>
     );

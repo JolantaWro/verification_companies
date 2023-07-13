@@ -26,7 +26,6 @@ const CompanyInput = ({ onSubmit }) => {
             return
         }
         setMessage("")
-        console.log(formKRS)
         onSubmit(formKRS);
     };
 

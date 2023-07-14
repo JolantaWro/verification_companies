@@ -26,10 +26,13 @@ const CompanyContainer = ({companyAsync, company, loading, error  }) => {
                 {/* <Link to="/" className="nav__link"><i class="bi bi-arrow-left-circle-fill"></i>Powrót</Link> */}
 
                 <div className="">
-                    <div className="">
-                        <h3>Szukaj <span>w KRS</span></h3>
+                    <div className="content">
+                        <h3 className="heading heading--x-large-colorful">Szukaj <span>w KRS</span></h3>
                         <CompanyInput onSubmit={handleSubmit} />
                     </div>
+
+
+
 
                     <div className="">
                         {/* do zmiany */}
@@ -39,14 +42,8 @@ const CompanyContainer = ({companyAsync, company, loading, error  }) => {
                     <div className="">
                         {company ? <Company company={company}/> : null}
                     </div>
-
-
-
-                    <div className="companyKRSInputHeader">
-                    </div>
                     
                 </div>
-                
                 
             </div>
         </>

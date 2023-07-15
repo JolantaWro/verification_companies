@@ -32,19 +32,16 @@ const CompanyInput = ({ onSubmit }) => {
     return (
         <>
             <div>
-                <form onSubmit={handleSubmit}>
-                    <div className="numberKRS">
-                        {/* <label htmlFor="numberKRS">Nr KRS </label> */}
-                        <input type="number" placeholder="0000012345...." onChange={handleChangeInput}/>
-                    </div>
-                    <div className="registerKRS">
-                        <label htmlFor="register">Typ Rejestru</label>
-                        <select onChange={handleChangeSelect}>
+                <form className='form' onSubmit={handleSubmit}>
+                    <input type="number" className='form-field' placeholder="Wprowadź nr KRS" onChange={handleChangeInput}/>
+                    <div>
+                        <label htmlFor="register" className='form-label'>Typ Rejestru</label>
+                        <select className='form-field form-field--select' onChange={handleChangeSelect}>
                             <option value="P">Przedsiębiorcy</option>
                             <option value="S">Stowarzyszenia i inne</option>
                         </select>
                     </div>
-                    <div className="searchKRS">
+                    <div className='form-nav'>
                         <button type="submit" className="btn btn-primary">Szukaj</button>
                         {/* {message ? <h3>{message}</h3> : null } */}
                         {/* zabezpieczyc informowanie użytkownika */}

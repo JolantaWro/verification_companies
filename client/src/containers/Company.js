@@ -27,7 +27,7 @@ const CompanyContainer = ({companyAsync, company, loading, error  }) => {
 
                 <div className="">
                     <div className="content">
-                        <h3 className="heading heading--x-large-colorful">Szukaj <span>w KRS</span></h3>
+                        <h3 className="heading heading--x-large">Szukaj <span className="heading__colorful">w KRS</span></h3>
                         <CompanyInput onSubmit={handleSubmit} />
                     </div>
 

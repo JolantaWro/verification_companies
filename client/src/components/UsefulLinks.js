@@ -12,7 +12,7 @@ const UsefulLinks = () => {
     return(
         <>
             <div className="social">
-                {/* <Link to="/" className="nav__link"><i class="bi bi-arrow-left-circle-fill"></i>Powrót</Link> */}
+                
 
                 <a href="https://ekrs.ms.gov.pl/web/wyszukiwarka-krs/strona-glowna/index.html" className="social__icon">
                     <img src={krs} alt="LogoKRS" className="social__img social__img--big"/>
@@ -37,6 +37,7 @@ const UsefulLinks = () => {
                 </a>
 
             </div>
+            {/* <Link to="/" className="nav__link"><i class="bi bi-arrow-left-circle-fill"></i>Powrót</Link> */}
         
         </>
     )

@@ -41,12 +41,9 @@
   font-size: var(--font-size--medium);
 }
 
-.heading--x-large-colorful {
-  font-size: var(--font-size--x-large);
-  font-weight: var(--font-weight--bold);
-}
-.heading--x-large-colorful span {
- color: rgb(212, 20, 20);
+
+.heading__colorful {
+  color: rgb(212, 20, 20);
 }
 
 
@@ -206,7 +203,7 @@
 } */
 
 .content {
-  margin-top: 50px;
+  margin-top: 100px;
   height: 420px;
   background-image: url("assets/img/company_input_logo.jpg");
   background-repeat: no-repeat; 
@@ -214,6 +211,34 @@
   background-position: center 45%;
   text-align: center;
 }
+
+
+
+.form-field {
+  width: 35%;
+  border-radius: 30px;
+  background-color: white;
+  text-align: center;
+  font: 400 20px/40px "Open Sans", Helvetica, Tahoma, sans-serif;
+}
+
+.form-field--select {
+  text-align: center;
+  margin: 10px 30px;
+  width: 16%;
+}
+
+.form-label {
+  margin: 15px 0 0 35px;
+  font-size: var(--font-size--medium);
+  font-weight: var(--font-weight--bold);
+}
+
+.form-nav {
+  margin-top: 20px;
+}
+
+
 
 /* .companyKRSInput {
   text-align: center;

@@ -11,7 +11,8 @@ const initialState = {
         date: "",
         capital: "",
         codePKD: "",
-        results: ""
+        resultsDateKRS: "",
+        resultsDateFinancial: ""
     }
 }
 

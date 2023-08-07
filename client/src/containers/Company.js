@@ -1,12 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom"
 
-import companyInput from "../assets/img/company_input_logo.jpg"
 import CompanyInput from "../components/simpleKRS/CompanyInput";
 import Company from "../components/simpleKRS/Company";
 import {connect} from "react-redux";
 import {fetchAsyncData} from "../redux/actions";
-import { compose } from "redux";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import UsefulLinks from "../components/UsefulLinks";
 
@@ -19,33 +16,23 @@ const CompanyContainer = ({companyAsync, company, loading, error  }) => {
     }
 
     return (
-        <>
-            <div className="">
-                
-                <UsefulLinks />
-                {/* <Link to="/" className="nav__link"><i class="bi bi-arrow-left-circle-fill"></i>Powrót</Link> */}
+        <>            
+            <UsefulLinks />
 
-                <div className="">
-                    <div className="content">
-                        <h3 className="heading heading--x-large">Szukaj <span className="heading__colorful">w KRS</span></h3>
-                        <CompanyInput onSubmit={handleSubmit} />
-                    </div>
+            <div className="container__content">
+                <div className="container--central ">
+                    <p className="heading heading--x-large">Szukaj <span className="heading__colorful">w KRS</span></p>
+                    <CompanyInput onSubmit={handleSubmit} />
+                    {loading && "Pobieram dane z KRS..."}
+                    {error && <p className="text__title text--color--red">{error}</p>}
 
-
-
-
-                    <div className="">
-                        {/* do zmiany */}
-                        {loading && "Pobieram..."}
-                        {error && <h3 className="">{error}</h3>}
-                    </div>
-                    <div className="">
-                        {company ? <Company company={company}/> : null}
-                    </div>
-                    
+                    {company ? <Company company={company}/> : null}
                 </div>
                 
             </div>
+
+                
+            
         </>
     );
 };

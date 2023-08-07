@@ -1,22 +1,28 @@
 :root {
 	--main-color: rgb(3, 0, 0);
 	--second-color: rgb(255, 253, 253);
+  --special-color:rgb(185, 29, 29);
 	--font-family-main: "Poppins", sans-serif;
 	--font-size--main: 18px;
 	--font-size--medium: 24px;
 	--font-size--large: 30px;
   --font-size--x-large: 36px;
+  --font-size--button: 16px;
 	--font-weight--main: 400;
 	--font-weight--bold: 700;
 	--font-line-height: 24px;
-	--border-radius: 30px;
-  --border-bottom: 3px red solid;
-	/* --border-shadow: 0 5px 30px rgba(0, 0, 0, 0.1); */
+	--border-radius: 5px;
 }
 
 * {
 	margin: 0;
 	padding: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
 }
 
 
@@ -43,22 +49,26 @@
 
 
 .heading__colorful {
-  color: rgb(212, 20, 20);
+  color: var(--special-color);
 }
 
 
-/* button */
+
 
 
 .btn-primary  {
-  background-color: black;
-  border-color: black;
+  background-color: var(--main-color);
+  border-color: var(--main-color);
 }
 
-/* landing */
+
+
 
 .jumbotron {
   position: relative;
+  -webkit-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+  -moz-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+  box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
 }
 
 
@@ -76,12 +86,17 @@
 }
 
 
+
+
 .footer {
   margin: 0 auto;
   height: 150px;
   background-color: var(--main-color);
   color: var(--second-color);
   display: flex;
+  -webkit-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+  -moz-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+  box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
 }
 
 .footer__text {
@@ -90,66 +105,11 @@
   margin-bottom: 20px
 }
 
-.nav__link {
-  background-color: blue;
-  align-self: center;
-  justify-self: center;
-
-  color: var(--main-color);
-  font-size: var(--font-size--medium);
-}
-
-
-/* edit company */
-
-/* .modal-body  label {
-  font-weight: bold;
-} */
-
-/* .edit-company {
-  margin-bottom: 20px;
-} */
-
-/* .detail-container {
-  height: 900px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: whitesmoke
-
-} */
-
-/* .detail-header {
-  margin-top: 50px;
-  text-align: center;
-} */
-
-/* .detail-header span {
-  font-weight: bold;
-  color: burlywood;
-} */
-
-/* .detail-page {
-  text-align: center;
-  width: 800px;
-  background-color: white;
-} */
-
-/* company KRS */
-
-/* .companyInputKRS {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
 
 /* usefulLinks social */
 
 .social {
+  width: 1500px;
   margin-top: 60px;
 
 }
@@ -174,148 +134,70 @@
 }
 
 
-/* company Input */
 
-
-
-/* .companyKRSAbout {
-  display: flex;
-  background-color: white;
-  margin: 30px 0 0px 0;
-} */
-/* .companyKRSAbout a {
-  margin: 0 auto;
-} */
-
-/* .companyKRSInput {
-  margin: 100px 0;
-  background-color: white
-} */
-
-/* .companyKRSInput span {
-  color: #ff3e4e;
-  font-weight: bold;
-} */
-
-/* .companyKRSInput h3 {
-  text-align: center;
-  font-size: 2.4em;
-} */
-
-.content {
-  margin-top: 100px;
-  height: 420px;
-  background-image: url("assets/img/company_input_logo.jpg");
-  background-repeat: no-repeat; 
-  background-size: cover;
-  background-position: center 45%;
-  text-align: center;
+.text {
+  font-size: var(--font-size--main);
 }
 
-
-
-.form-field {
-  width: 35%;
-  border-radius: 30px;
-  background-color: white;
-  text-align: center;
-  font: 400 20px/40px "Open Sans", Helvetica, Tahoma, sans-serif;
+.text--large {
+  font-size: var(--font-size--large);
 }
 
-.form-field--select {
-  text-align: center;
-  margin: 10px 30px;
-  width: 16%;
+.text--color--red {
+  color: var(--special-color);
 }
 
-.form-label {
-  margin: 15px 0 0 35px;
+.text__title {
   font-size: var(--font-size--medium);
   font-weight: var(--font-weight--bold);
 }
 
-.form-nav {
-  margin-top: 20px;
+.text--space {
+  padding: 20px;
+}
+
+.container__content {
+  position: relative;
+  width: 100%;
+  height: 800px;
+}
+
+.container--central {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.content {
+  width: 700px;
+}
+
+.content__item {
+  text-align: left;
 }
 
 
+.form {
+  height: 150px;
+}
 
-/* .companyKRSInput {
-  text-align: center;
-  height: 500px;
-  border-radius: 30px;
-  background-image: url("assets/img/hands.jpg");
-} */
+.form__item {
+  padding-left: 15px;
+  text-align: left;
+  font-weight: var(--font-weight--main);
+  font-size: var(--font-size--main);
+  color: rgb(148, 148, 148);
+  height: 40px;
+  width: 300px;
+  margin: 15px;
+  background-color: var(--second-color);
+  
+  border: 1px solid rgb(110, 105, 105);
+  border-radius: var(--border-radius);
+}
 
-
-
-/* #root .container-input {
-  background-image: url("assets/img/companyInput.jpg");
-  border-radius: 30px;
-} */
-
-
-/* .container-input {
-
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  font-size: 1.1em;
-  font-weight: bold;
-
-} */
-
-
-
-
-/* form.container-input-form {
-  margin-top: 30px;
-  border-radius: 30px;
-  opacity: 0.7;
-  width: 500px;
-  height: 300px;
-  background-color: white;
-  box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
-} */
-
-/* .numberKRS {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 1.1em;
-} */
-/* .numberKRS input {
-  width: 35%;
-  border-radius: 30px;
-  background-color: white;
-  text-align: center;
-} */
-
-
-
-/* .registerKRS {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 1.1em;
-} */
-
-/* .registerKRS select {
-  text-align: center;
-  margin: 10px 30px;
-  width: 15%;
-  border-radius: 30px;
-  background-color: white;
-} */
-
-/* #register {
-  background-color: ghostwhite;
-  width: 33%;
-  margin:  15px 20px;
-  font-size: 1.1em;
-} */
-
-/* div.searchKRS {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-} */
-
+.form__item--small {
+  width: 200px;
+}

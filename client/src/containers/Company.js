@@ -21,7 +21,7 @@ const CompanyContainer = ({companyAsync, company, loading, error  }) => {
 
             <div className="container__content">
                 <div className="container--central ">
-                    <p className="heading heading--x-large">Szukaj <span className="heading__colorful">w KRS</span></p>
+                    <p className="heading heading--x-large">Check <span className="heading__colorful">in KRS</span></p>
                     <CompanyInput onSubmit={handleSubmit} />
                     {loading && "Pobieram dane z KRS..."}
                     {error && <p className="text__title text--color--red">{error}</p>}

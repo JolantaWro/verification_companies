@@ -36,7 +36,7 @@ const CompanyInput = ({ onSubmit }) => {
                     <option value="P">Przedsiębiorcy</option>
                     <option value="S">Stowarzyszenia i inne</option>
                 </select>
-                <input type="number" placeholder="Numer KRS" className="form__item form__item--number" onChange={handleChangeInput}/>
+                <input type="number" placeholder="Numer KRS" className="form__item" onChange={handleChangeInput}/>
                 
                 <button type="submit" className="btn btn-primary">Szukaj</button>
                 {message ? <p className='text__title text--color--red'>{message}</p> : null }

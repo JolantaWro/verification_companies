@@ -46,7 +46,34 @@ const Login = ({setAuth}) => {
 
   return (
     <>
-      <h1 className="mt-5 text-center">Login</h1>
+      <div className="container__content">
+          <div className="container--central ">
+              <p className="heading heading--x-large">Login</p>
+              <form className="form form--small" onSubmit={onSubmitForm}>
+                <input
+                  type="text"
+                  placeholder="Email"
+                  name="email"
+                  value={email}
+                  onChange={e => onChange(e)}
+                  className="form__item"
+                />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  value={password}
+                  onChange={e => onChange(e)}
+                  className="form__item"
+                />
+                <button className="btn btn-primary">Login</button>
+              </form>
+              <p className="text">or</p>
+              <Link to="/register" className="btn btn-primary"> Register</Link>
+          </div>
+                
+      </div>
+      {/* <h1 className="mt-5 text-center">Login</h1>
       <form onSubmit={onSubmitForm}>
         <input
           type="text"
@@ -66,7 +93,7 @@ const Login = ({setAuth}) => {
         />
         <button className="btn btn-success btn-block">Submit</button>
       </form>
-      <Link to="/register">Register</Link>
+      <Link to="/register">Register</Link> */}
     </>
   );
 };

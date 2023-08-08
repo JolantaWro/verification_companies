@@ -10,12 +10,12 @@ const Landing = () => {
         <div className="jumbotron mt-5">
 
           <div className="heading">
-            <h1 className="heading heading--x-large">Witaj !</h1>
-              <p className="heading heading--medium">Zaloguj się i zacznij budować swoją listę przedsiębiorstw,</p>
-              <Link to="/login" className="btn btn-primary">Logowanie</Link>
-              <Link to="/register" className="btn btn-primary ml-3">Rejestracja</Link>
-              <p className="heading heading--medium">bądź wyszukaj aktualne dane w KRS</p>
-              <Link to="/check" className="btn btn-primary">Szukaj</Link>
+            <h1 className="heading heading--x-large">Welcome !</h1>
+              <p className="heading heading--medium">Sign In and start building your list</p>
+              <Link to="/login" className="btn btn-primary">Login</Link>
+              <Link to="/register" className="btn btn-primary ml-3">Register</Link>
+              <p className="heading heading--medium">or check Company in KRS</p>
+              <Link to="/check" className="btn btn-primary">Check</Link>
           </div>
 
           <div className="container__img">

@@ -47,35 +47,40 @@ const Register = ({ setAuth }) => {
 
   return (
     <>
-      <h1 className="mt-5 text-center">Register</h1>
-      <form onSubmit={onSubmitForm}>
-        <input
-          type="text"
-          name="email"
-          value={email}
-          placeholder="email"
-          onChange={e => onChange(e)}
-          className="form-control my-3"
-        />
-        <input
-          type="password"
-          name="password"
-          value={password}
-          placeholder="password"
-          onChange={e => onChange(e)}
-          className="form-control my-3"
-        />
-        <input
-          type="text"
-          name="name"
-          value={name}
-          placeholder="name"
-          onChange={e => onChange(e)}
-          className="form-control my-3"
-        />
-        <button className="btn btn-success btn-block">Submit</button>
-      </form>
-      <Link to="/login">Login</Link>
+      <div className="container__content">
+        <div className="container--central">
+            <p className="heading heading--x-large">Register</p>
+            <form onSubmit={onSubmitForm} className="form form--bigger">
+              <input
+                type="text"
+                name="email"
+                value={email}
+                placeholder="Email"
+                onChange={e => onChange(e)}
+                className="form__item"
+              />
+              <input
+                type="password"
+                name="password"
+                value={password}
+                placeholder="Password"
+                onChange={e => onChange(e)}
+                className="form__item"
+              />
+              <input
+                type="text"
+                name="name"
+                value={name}
+                placeholder="Name"
+                onChange={e => onChange(e)}
+                className="form__item"
+              />
+              <button className="btn btn-primary">Register</button>
+            </form>
+            <p className="text">or</p>
+            <Link to="/login" className="btn btn-primary">Login</Link>
+        </div>
+      </div>
     </>
   );
 };

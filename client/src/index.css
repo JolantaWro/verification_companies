@@ -189,6 +189,11 @@ input[type=number]::-webkit-outer-spin-button {
   width: 300px;
 }
 
+.form--bigger {
+  height: 250px;
+  width: 300px;
+}
+
 .form__item {
   padding-left: 15px;
   text-align: left;

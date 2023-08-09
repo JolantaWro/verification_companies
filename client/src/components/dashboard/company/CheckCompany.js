@@ -90,11 +90,11 @@ const CheckCompany = ({ company }) => {
     return (
         <>
 
-            {/* <Link to="/details" >
-                <button type="button"  class="btn btn-secondary" onClick={()=>getCompanyDetail(company.company_id)}>
+            <Link to="/details" >
+                <button type="button"  class="btn btn-primary" onClick={()=>getCompanyDetail(company.company_id)}>
                 Check
             </button>
-            </Link> */}
+            </Link>
             {/* <button type="button" className="btn btn-secondary" data-toggle="modal" data-target={`#id${company.company_id}`}  onClick={()=>getCompanyDetail(company.company_id)}>
                 Check
             </button> */}

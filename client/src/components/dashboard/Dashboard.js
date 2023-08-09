@@ -44,17 +44,16 @@ const Dashboard = ({ setAuth }) => {
   }, [companyChange]);
 
   return (
-    <div>
-    <div className="d-flex mt-5 justify-content-around">
-      <h2>{name} 's List</h2>
-      <button onClick={e => logout(e)} className="btn btn-primary">
-        Logout
-      </button>
-    </div>
-
-    <InputCompany setCompanyChange={setCompanyChange} />
-    <ListCompany allCompanys={allCompanys} setCompanyChange={setCompanyChange} />
-  </div>
+    <>
+      <div className="container--end d-flex mt-5 justify-content-end">
+        {/* <p className="text--large"> {name}</p> */}
+        <button onClick={e => logout(e)} className="btn btn-primary">
+          Logout
+        </button>
+      </div>
+      <InputCompany setCompanyChange={setCompanyChange} />
+      <ListCompany allCompanys={allCompanys} setCompanyChange={setCompanyChange} />
+  </>
   );
 };
 

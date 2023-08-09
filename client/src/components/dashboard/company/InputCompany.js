@@ -43,44 +43,44 @@ const InputCompany = ({ setCompanyChange }) => {
   return (
     <>
       <h1 className="text-center my-5">Add Company</h1>
-      <div className="add-company">
-        <form className="d-flex" onSubmit={onSubmitForm}>
+      <div className="container__content--small" >
+        <form className="content--big" onSubmit={onSubmitForm}>
           <input
             type="text"
             placeholder="Company name"
-            className="form-control"
+            className="form__item form__item--small"
             value={name}
             onChange={e => setName(e.target.value)}
           />
           <input
             type="number"
             placeholder="Company NIP"
-            className="form-control"
+            className="form__item form__item--small form__item--space--small"
             value={nip}
             onChange={e => setNip(e.target.value)}
           />
           <input
             type="number"
             placeholder="Company KRS"
-            className="form-control"
+            className="form__item form__item--small form__item--space--small"
             value={krs}
             onChange={e => setKrs(e.target.value)}
           />
           <input
             type="date"
             placeholder="Date publication data"
-            className="form-control"
+            className="form__item form__item--small form__item--space--small"
             value={data}
             onChange={e => setData(e.target.value)}
           />
           <input
             type="text"
             placeholder="Type of register"
-            className="form-control"
+            className="form__item form__item--little form__item--space--small"
             value={mark}
             onChange={e => setMark(e.target.value)}
           />
-          <button className="btn btn-success ">Add</button>
+          <button className="btn btn-primary">Add</button>
         </form>
       </div>
     </>

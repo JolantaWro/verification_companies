@@ -28,6 +28,7 @@ const ListCompany = ({  allCompanys, setCompanyChange }) => {
 
   return (
     <>
+      <h1 className="text-center my-5">List Company</h1>
       {" "}
       <table className="table mt-5">
         <thead>

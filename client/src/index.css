@@ -194,6 +194,24 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: left;
 }
 
+.content__link {
+  color: rgb(148, 148, 148);
+  font-weight: var(--font-weight--bold);
+  text-decoration: none;
+  border: 1px solid rgb(110, 105, 105);
+  border-radius: var(--border-radius);
+  padding: 8px;
+  margin-left: 10px;
+  background-color: white;
+  font-size: var(--font-size--button);
+} 
+
+.content__link:hover {
+  color: white;
+  background-color: black;
+  font-weight: var(--font-weight--main);
+}
+
 
 .form {
   height: 150px;

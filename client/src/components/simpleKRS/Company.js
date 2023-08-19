@@ -17,11 +17,11 @@ const Company = ({ company }) => {
                 }
 
                 {company.date === "Brak danych w KRS" || company.date === "" ? null : 
-                <p className="content__item text">Data ostatniego wpisu: <b className='text'>{company.date}r.</b></p>
+                <p className="content__item text">Data ostatniego wpisu: <b className='text'>{company.date}r.</b><a href="https://ekrs.ms.gov.pl/web/wyszukiwarka-krs/strona-glowna/index.html" target="_blank" className='text text--space content__link'>Pobierz KRS</a></p>
                 }
 
                 {company.resultsDateKRS === "Brak danych w KRS" || company.resultsDateKRS === "" ? null : 
-                <p className="content__item text">Ostatnio opublikowane dane w KRS: <b>{company.resultsDateKRS[company.resultsDateKRS.length -1].zaOkresOdDo}</b></p>
+                <p className="content__item text">Ostatnio opublikowane dane w KRS: <b>{company.resultsDateKRS[company.resultsDateKRS.length -1].zaOkresOdDo}</b> </p>
                 }
 
                 {company.resultsDateFinancial === "Brak danych w KRS" || company.resultsDateFinancial === "" ? null : 
